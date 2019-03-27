@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <!--<link rel="stylesheet" href="./styles.styl">-->
+    <title>Search Test</title>
+  </head>
+  <body>
+    <header>
+      <ul class="header-nav-left">
+          <li id="menu" onclick="toggleMenu(window.matchMedia('(max-width: 1200px)')">
+            <a href="#" class="menu-icon"><i class="fa fa-bars"></i></a>
+          </li>
+          <li class="tabs inc-tab">Incident Management</li>
+          <li class="tabs prb-tab">Problem Management</li>
+          <li class="tabs apr-tab">Application Request<i class="fa fa-caret-down"></i></li>
+          <li class="tabs chg-tab">Change Management<i class="fa fa-caret-down"></i></li>
+      </ul>
+      <ul class="header-nav-right">
+        <li id="search">
+          <input id="searchBar" type="text" name="search" placeholder="Search..." />
+        </li>
+        <li class="tabs right-tabs">About</li>
+        <li class="tabs right-tabs">Help</li>
+      </ul>
+
+      <div class="equal-width-bar">
+        <a href="#">Android</a><a href="#">iOS</a><a href="#">Amazon</a><a href="#">Windows OS</a><a href="#">Samsung OS</a>
+      </div>
+    </header>
+
+    <section id="searchContainer">
+      <h3>Search Menu</h3>
+      <input type="text" id="itemSearch" value="Enter an item..." onkeyup="loadMyItem()" />
+      <ul id="searchBox">
+        <li><a href="#">Attachments</a></li>
+        <li><a href="#">Business User Info</a></li>
+        <li><a href="#">Catalog</a></li>
+        <li><a href="#">Functionality</a></li>
+        <li><a href="#">Inventory</a></li>
+        <li><a href="#">Service Level</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <!-- <button></button> -->
+      <div class="pagination">
+        <a href="#">&laquo;</a><a href="#" class="active">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">&raquo;</a>
+      </div>
+
+      &copy; 2019
+    </footer>
+
+    <script src="./script.js"></script>
+
+  </body>
+</html>
