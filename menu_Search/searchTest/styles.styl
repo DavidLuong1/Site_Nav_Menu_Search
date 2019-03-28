@@ -1,0 +1,158 @@
+/*
+margin()
+  margin: arguments
+
+padding()
+  padding: arguments
+
+background-color()
+  background-color: arguments
+
+width()
+  width: arguments
+
+float()
+  float: arguments
+
+*/
+
+*
+  margin: 0
+  padding: 0
+  list-style: none
+  text-decoration: none
+  box-sizing: border-box
+  color: #000
+
+
+header, .equal-width-bar, footer
+  left: 0
+  right: 0
+
+
+header, footer
+  position: absolute
+
+
+header
+  top: 0
+  background-color: #E3DCE0
+
+
+header li, .header-nav-left, .equal-width-bar a
+  float: left
+  font: 1em "Oswald", sans-serif
+
+
+#menu:hover
+  background-color: #999
+
+
+header li
+  background-color: #E3DCE0
+  padding: 10px 16px
+
+
+.header-nav-right, input[type=text], input[type=text]:focus
+  /* background-position: 100% center /*ease from right to left */
+  /* background-position: 0 center /*ease from left to right* */
+  float: right
+
+
+header, .equal-width-bar, input[type=text]:focus
+  width: 100%
+
+
+input[type=text]
+  width: 120px
+  border: solid #ccc
+  border-radius: 10px
+  background: #FCF5E5 url('searchicon.png') 5px 0px no-repeat
+  /* background-position: 5px 0px */
+  /* background-repeat: no-repeat */
+  padding: 0px 15px 0px 30px
+
+
+#searchBar
+  /* transition-timing-function: linear */
+  -webkit-transition: width 0.3s ease-in-out
+  -moz-transition: width 0.3s ease-in-out
+  -ms-transition: width 0.3s ease-in-out
+  -o-transition: width 0.3s ease-in-out
+  transition: width 0.3s ease-in-out
+
+
+.equal-width-bar
+  background-color: #B8E3BB
+  position: relative
+  overflow: auto
+
+
+.equal-width-bar a
+  width: 20%
+  padding: 8px 0
+
+
+.equal-width-bar a:hover
+  background-color: #D8E3AA
+
+
+header li, .equal-width-bar a:not(:last-child)
+  border-right: 1px solid #333
+
+
+.equal-width-bar a
+  border-top: 1px solid #333
+  border-bottom: 1px solid #333
+
+
+.equal-width-bar, #searchContainer, footer
+  text-align: center
+
+
+#searchContainer
+  position: absolute
+  top: 50%
+  left: 50%
+
+
+footer
+  bottom: 0
+  background-color: #222
+
+
+footer, .pagination a
+  color: #fff
+
+
+.pagination
+  margin-bottom: 16px
+
+
+.pagination a.active
+  background-color: #3C60FF
+
+
+.pagination a
+  padding: 0 16px
+  font-size: 1.5em
+
+
+
+@media all and (max-width: 1200px)
+  .header-nav-left, .header-nav-right
+    background-color: #999
+    float: none
+
+
+  #search
+    position: absolute
+    right: 0
+    border-bottom: 1px solid #333
+
+
+  li.tabs
+    /* display: none */
+    width: 100%
+    border-top: 1px solid #333
+    border-right: none
