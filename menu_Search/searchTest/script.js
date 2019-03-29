@@ -12,8 +12,9 @@ document.getElementById("searchBar").addEventListener("keyup", function(evt){
 // function toggleMenu( window.matchMedia("(max-width: 1200px)") ){
 function toggleMenu(){
   // if( window.matchMedia("(max-width: 1200px)").matches ){
-    document.getElementById("#menu").classList.toggle("toggle");
+    document.getElementById("#menu").classList.toggle("hidden-tab");
     // document.getElementsByClassName(".tabs").style.display = "none";
+    // document.getElementsByClassName(".hidden-tab").style.display = "block";
   // }
 }
 

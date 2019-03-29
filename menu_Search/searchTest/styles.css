@@ -7,13 +7,18 @@
   color: #000;
 }
 
+body {
+  background-image: linear-gradient(to left, #2974BA, #328DEB, #8FAEEB);
+  background-attachment: fixed;
+}
+
 header, .equal-width-bar, footer {
   left: 0;
   right: 0;
 }
 
 header, footer {
-  position: absolute;
+  position: fixed;
 }
 
 header {
@@ -51,9 +56,7 @@ header, .equal-width-bar, #searchBar:focus, #searchContainer, #itemSearch, .sear
 
 input[type=text] {
   border: solid #ccc;
-  background: #FCF5E5 url('searchicon.png') 5px 0px no-repeat;
-  /* background-position: 5px 0px; */
-  /* background-repeat: no-repeat; */
+  background-color: #FCF5E5;
   padding: 0px 15px 0px 30px;
 }
 
@@ -100,10 +103,9 @@ header li, .equal-width-bar a:not(:last-child) {
 }
 
 #searchContainer {
-  /* position: absolute; */
-  position: relative;
+  /* position: relative; */
   width: 60%;
-  margin: 20em auto;
+  margin: 15em auto;
 }
 
 footer {
@@ -146,13 +148,18 @@ footer, .pagination a{
   }
 
   li.tabs {
-    display: none;
     width: 100%;
     border-top: 1px solid #333;
     border-right: none;
   }
 
-  .toggle {
-    display: block;
+  li.tabs, .hidden-tab {
+    display: none;
+  }
+}
+
+@media all and (max-width: 639px) {
+  header, .searchMenuOptions, footer {
+    font-size: 12px;
   }
 }
