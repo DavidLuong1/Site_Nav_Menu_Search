@@ -25,13 +25,18 @@ float()
   color: #000
 
 
+body
+  background-image: linear-gradient(to left, #2974BA, #328DEB, #8FAEEB)
+  background-attachment: fixed
+
+
 header, .equal-width-bar, footer
   left: 0
   right: 0
 
 
 header, footer
-  position: absolute
+  position: fixed
 
 
 header
@@ -44,36 +49,38 @@ header li, .header-nav-left, .equal-width-bar a
   font: 1em "Oswald", sans-serif
 
 
-#menu:hover
+#menu
+  display: none
+
+
+#menu:hover, #searchMenuHeader
   background-color: #999
 
 
-header li
+header li, .searchMenuOptions
   background-color: #E3DCE0
   padding: 10px 16px
 
 
-.header-nav-right, input[type=text], input[type=text]:focus
+.header-nav-right, #searchBar, #searchBar:focus
   /* background-position: 100% center /*ease from right to left */
   /* background-position: 0 center /*ease from left to right* */
   float: right
 
 
-header, .equal-width-bar, input[type=text]:focus
+header, .equal-width-bar, #searchBar:focus, #searchBar2:focus, #searchContainer, #itemSearch, .searchMenuOptions
   width: 100%
 
 
 input[type=text]
-  width: 120px
   border: solid #ccc
-  border-radius: 10px
-  background: #FCF5E5 url('searchicon.png') 5px 0px no-repeat
-  /* background-position: 5px 0px */
-  /* background-repeat: no-repeat */
+  background-color: #FCF5E5
   padding: 0px 15px 0px 30px
 
 
-#searchBar
+#searchBar, #searchBar2
+  width: 120px
+  border-radius: 10px
   /* transition-timing-function: linear */
   -webkit-transition: width 0.3s ease-in-out
   -moz-transition: width 0.3s ease-in-out
@@ -101,19 +108,35 @@ header li, .equal-width-bar a:not(:last-child)
   border-right: 1px solid #333
 
 
-.equal-width-bar a
+.equal-width-bar a, .searchMenuOptions:not(:first-child)
   border-top: 1px solid #333
+
+
+.equal-width-bar a
   border-bottom: 1px solid #333
 
 
-.equal-width-bar, #searchContainer, footer
+.equal-width-bar, .flex-container, #searchContainer, footer
   text-align: center
 
 
+.flex-container  /* Styles the <ul>, NOT <nav> */
+  display: flex
+
+
+/* APPLY THIS IF YOU ADD A SEARCH BAR (<li>) BEFORE THE LAST ITEM */
+li.search
+  flex: 1
+
+
+.flex-container > li.flexible-tabs
+  flex: 1
+
+
 #searchContainer
-  position: absolute
-  top: 50%
-  left: 50%
+  /* position: relative */
+  width: 60%
+  margin: 15em auto
 
 
 footer
@@ -138,11 +161,15 @@ footer, .pagination a
   font-size: 1.5em
 
 
-
+/*  */
 @media all and (max-width: 1200px)
   .header-nav-left, .header-nav-right
     background-color: #999
     float: none
+
+
+  #menu
+    display: block
 
 
   #search
@@ -152,7 +179,39 @@ footer, .pagination a
 
 
   li.tabs
-    /* display: none */
     width: 100%
     border-top: 1px solid #333
     border-right: none
+
+
+  li.tabs, .hidden-tab
+    display: none
+
+
+
+@media all and (max-width: 767px)
+  .flex-container
+    flex-wrap: wrap
+
+
+  .flex-container > li.flexible-tabs
+    /* flex-basis: 1 1 50% */
+    flex-basis: 100%
+    border-bottom: 1px solid #333
+
+
+  .flex-container > li.flexible-tabs:not(:last-child)
+    border-right: 1px solid #333
+
+
+  li.search
+    order: -1  /*By default, order is 0. Switch to 1 to put search bar at the bottom use -1 to put search bar at the top */
+
+
+  header, .searchMenuOptions, footer
+    font-size: 12px
+
+
+  /* .flex-container > li.flexible-tabs
+    flex-basis: 1 1 100%
+     */

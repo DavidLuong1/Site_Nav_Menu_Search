@@ -50,7 +50,7 @@ header li, .searchMenuOptions {
   float: right;
 }
 
-header, .equal-width-bar, #searchBar:focus, #searchContainer, #itemSearch, .searchMenuOptions {
+header, .equal-width-bar, #searchBar:focus, #searchBar2:focus, #searchContainer, #itemSearch, .searchMenuOptions {
   width: 100%;
 }
 
@@ -60,7 +60,7 @@ input[type=text] {
   padding: 0px 15px 0px 30px;
 }
 
-#searchBar {
+#searchBar, #searchBar2 {
   width: 120px;
   border-radius: 10px;
   /* transition-timing-function: linear; */
@@ -98,8 +98,21 @@ header li, .equal-width-bar a:not(:last-child) {
   border-bottom: 1px solid #333;
 }
 
-.equal-width-bar, #searchContainer, footer {
+.equal-width-bar, .flex-container, #searchContainer, footer {
   text-align: center;
+}
+
+.flex-container { /* Styles the <ul>, NOT <nav> */
+  display: flex;
+}
+
+/* APPLY THIS IF YOU ADD A SEARCH BAR (<li>) BEFORE THE LAST ITEM */
+li.search {
+  flex: 1;
+}
+
+.flex-container > li.flexible-tabs {
+  flex: 1;
 }
 
 #searchContainer {
@@ -158,8 +171,30 @@ footer, .pagination a{
   }
 }
 
-@media all and (max-width: 639px) {
+@media all and (max-width: 767px) {
+  .flex-container {
+    flex-wrap: wrap;
+  }
+
+  .flex-container > li.flexible-tabs {
+    /* flex-basis: 1 1 50%; */
+    flex-basis: 100%;
+    border-bottom: 1px solid #333;
+  }
+
+  .flex-container > li.flexible-tabs:not(:last-child) {
+    border-right: 1px solid #333;
+  }
+
+  li.search {
+    order: -1;  /*By default, order is 0. Switch to 1 to put search bar at the bottom; use -1 to put search bar at the top */
+  }
+
   header, .searchMenuOptions, footer {
     font-size: 12px;
   }
+
+  /* .flex-container > li.flexible-tabs {
+    flex-basis: 1 1 100%;
+  }   */
 }
